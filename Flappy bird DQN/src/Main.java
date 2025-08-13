@@ -8,7 +8,7 @@ public class Main {
     float epsilon = 0.99f;
     float speed = 2;
     FlappyBird game = new FlappyBird(1900, height);
-    QLearning dqn = new QLearning(5, 2, 0.001f, 0.9f);
+    QLearning dqn = new QLearning(5, 2, 0.0001f, 0.9f);
 
     public void main(){
         dqn.setAIClippingThreshold(1);
@@ -117,3 +117,4 @@ public class Main {
         new Main().main();
     }
 }
+
