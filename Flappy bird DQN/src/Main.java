@@ -52,9 +52,6 @@ public class Main {
                 if(previousState[0] >= 1)
                     reward -= 10f;
 
-                //bird gets a small between 0 and 1, dependent on how close he is to the correct height
-                float extraReward = 1 - Math.abs(previousState[0] - previousState[3]) / height;
-                reward += extraReward;
 
                 if(highestReward < extraReward)
                     highestReward = extraReward;
@@ -115,5 +112,6 @@ public class Main {
         new Main().main();
     }
 }
+
 
 
