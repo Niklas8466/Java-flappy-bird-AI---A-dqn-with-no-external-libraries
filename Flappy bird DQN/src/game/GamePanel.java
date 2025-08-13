@@ -29,13 +29,25 @@ public class GamePanel extends JPanel {
         this.setLayout(null);
 
         try{
-            playerSprite = new ImageIcon("Flappy bird DQN/sprites/yellowbird-midflap.png");
+            ImageIcon icon = new ImageIcon("sprites/yellowbird-midflap.png");
+            if(icon.getIconWidth() == -1){
+                playerSprite = new ImageIcon("Flappy bird DQN/sprites/yellowbird-midflap.png");
 
-            backgroundSprite = new ImageIcon("Flappy bird DQN/sprites/background-day.png");
+                backgroundSprite = new ImageIcon("Flappy bird DQN/sprites/background-day.png");
 
-            baseSprite = new ImageIcon("Flappy bird DQN/sprites/base.png");
-            pipeBottomSprite = new ImageIcon("Flappy bird DQN/sprites/pipe-green-bottom.png");
-            pipeTopSprite = new ImageIcon("Flappy bird DQN/sprites/pipe-green-top.png");
+                baseSprite = new ImageIcon("Flappy bird DQN/sprites/base.png");
+                pipeBottomSprite = new ImageIcon("Flappy bird DQN/sprites/pipe-green-bottom.png");
+                pipeTopSprite = new ImageIcon("Flappy bird DQN/sprites/pipe-green-top.png");
+            }
+            else{
+                playerSprite = new ImageIcon("sprites/yellowbird-midflap.png");
+
+                backgroundSprite = new ImageIcon("sprites/background-day.png");
+
+                baseSprite = new ImageIcon("sprites/base.png");
+                pipeBottomSprite = new ImageIcon("sprites/pipe-green-bottom.png");
+                pipeTopSprite = new ImageIcon("sprites/pipe-green-top.png");
+            }
 
 
         } catch (Exception e) {
@@ -79,4 +91,5 @@ public class GamePanel extends JPanel {
         g2d.drawImage(baseSprite.getImage(), 0, height-baseSprite.getIconHeight(), width, baseSprite.getIconHeight(), this);
     }
 }
+
 
