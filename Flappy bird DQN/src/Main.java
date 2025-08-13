@@ -41,7 +41,8 @@ public class Main {
 
 
                 //calculate reward
-                float reward = 0.0f;
+                //reward for staying alive
+                float reward = 0.1f;
                 //bird died
                 if(game.isTerminalState())
                     reward -= 1.0f;
@@ -112,6 +113,7 @@ public class Main {
         new Main().main();
     }
 }
+
 
 
 
