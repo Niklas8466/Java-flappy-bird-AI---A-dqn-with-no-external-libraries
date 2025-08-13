@@ -41,9 +41,7 @@ public class Main {
 
 
                 //calculate reward
-
-                //small reward for staying alive
-                float reward = 0.1f;
+                float reward = 0.0f;
                 //bird died
                 if(game.isTerminalState())
                     reward -= 1.0f;
@@ -55,11 +53,11 @@ public class Main {
                     reward -= 10f;
 
                 //bird gets a small between 0 and 1, dependent on how close he is to the correct height
-//                float extraReward = 1 - Math.abs(previousState[0] - previousState[3]) / height;
-//                reward += extraReward;
-//
-//                if(highestReward < extraReward)
-//                    highestReward = extraReward;
+                float extraReward = 1 - Math.abs(previousState[0] - previousState[3]) / height;
+                reward += extraReward;
+
+                if(highestReward < extraReward)
+                    highestReward = extraReward;
 
 
                 //get new data
@@ -117,4 +115,5 @@ public class Main {
         new Main().main();
     }
 }
+
 
